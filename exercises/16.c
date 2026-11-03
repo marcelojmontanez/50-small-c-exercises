@@ -4,7 +4,6 @@
 /* Append source to destination; return destination. */
 char *my_strcat(char *destination, const char *source) {
     char *d = destination + my_strlen(destination);
-    while (*d) ++d;
     while ((*d++ = *source++));
     return destination;
 }

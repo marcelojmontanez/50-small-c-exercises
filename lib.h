@@ -7,6 +7,7 @@
  * and in exercises that use those helpers. */
 int my_isdigit(int c);
 int my_isalpha(int c);
+int my_isalnum(int c);
 int my_isspace(int c);
 int my_tolower(int c);
 size_t my_strlen(const char *s);

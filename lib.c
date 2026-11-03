@@ -13,6 +13,10 @@ int my_isalpha(int c) {
     return ('A' <= c && c <= 'Z') || ('a' <= c && c <= 'z');
 }
 
+int my_isalnum(int c) {
+    return my_isdigit(c) || my_isalpha(c);
+}
+
 int my_isspace(int c) {
     return c == ' ' || c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r';
 }
