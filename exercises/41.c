@@ -3,9 +3,12 @@
 
 /* Count one bits in an unsigned int. */
 unsigned bit_count(unsigned value) {
-    (void)value;
-    /* TODO: implement. */
-    return 0;
+    unsigned count = 0;
+    while (value) {
+        value &= value - 1;
+        ++count;
+    }
+    return count;
 }
 
 #ifndef EXERCISE_TEST

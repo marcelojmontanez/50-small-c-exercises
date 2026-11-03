@@ -3,9 +3,7 @@
 
 /* Recognize ASCII letters or digits; reuse your earlier functions. */
 int my_isalnum(int c) {
-    (void)c;
-    /* TODO: implement. */
-    return 0;
+    return my_isdigit(c) || my_isalpha(c);
 }
 
 #ifndef EXERCISE_TEST

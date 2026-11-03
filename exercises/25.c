@@ -3,11 +3,9 @@
 
 /* Find the first matching unsigned byte within count bytes. */
 void *my_memchr(const void *memory, int value, size_t count) {
-    (void)memory;
-    (void)value;
-    (void)count;
-    /* TODO: implement. */
-    return NULL;
+    const unsigned char *m = memory;
+    while (count && *m != (unsigned char)value) { ++m; --count; }
+    return count ? (void *)m : NULL;
 }
 
 #ifndef EXERCISE_TEST

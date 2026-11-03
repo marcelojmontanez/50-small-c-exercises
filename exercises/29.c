@@ -3,10 +3,8 @@
 
 /* Find the first string character belonging to accepted. */
 char *my_strpbrk(const char *s, const char *accepted) {
-    (void)s;
-    (void)accepted;
-    /* TODO: implement. */
-    return NULL;
+    s += my_strcspn(s, accepted);
+    return *s ? (char *)s : NULL;
 }
 
 #ifndef EXERCISE_TEST

@@ -3,11 +3,9 @@
 
 /* Compare at most count bytes of the two strings. */
 int my_strncmp(const char *a, const char *b, size_t count) {
-    (void)a;
-    (void)b;
-    (void)count;
-    /* TODO: implement. */
-    return 0;
+    if (!count) return 0;
+    while (--count && *a == *b && *a != '\0') { ++a; ++b; }
+    return (unsigned char)*a - (unsigned char)*b;
 }
 
 #ifndef EXERCISE_TEST

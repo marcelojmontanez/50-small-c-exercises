@@ -3,10 +3,8 @@
 
 /* Compare the 2 strings lexicographically */
 int my_strcmp(const char *a, const char *b) {
-    (void)a;
-    (void)b;
-    /* TODO: implement. */
-    return 0;
+    while(*a == *b && *a != '\0') { ++a, ++b; }
+    return (unsigned char)*a - (unsigned char)*b;
 }
 
 #ifndef EXERCISE_TEST

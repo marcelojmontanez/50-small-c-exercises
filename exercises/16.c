@@ -3,10 +3,10 @@
 
 /* Append source to destination; return destination. */
 char *my_strcat(char *destination, const char *source) {
-    (void)destination;
-    (void)source;
-    /* TODO: implement. */
-    return NULL;
+    char *d = destination + my_strlen(destination);
+    while (*d) ++d;
+    while ((*d++ = *source++));
+    return destination;
 }
 
 #ifndef EXERCISE_TEST

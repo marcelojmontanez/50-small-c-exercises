@@ -4,10 +4,11 @@
 
 /* Allocate an independent copy of count integers. */
 int *array_clone(const int *values, size_t count) {
-    (void)values;
-    (void)count;
-    /* TODO: implement. */
-    return NULL;
+    if (!count || count > SIZE_MAX / sizeof(int)) return NULL;
+    
+    int *memory = malloc(count * sizeof(int));
+    if (!memory) return NULL;
+    return my_memcpy(memory, values, count * sizeof(int));
 }
 
 #ifndef EXERCISE_TEST

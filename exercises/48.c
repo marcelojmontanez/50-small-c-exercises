@@ -4,16 +4,25 @@
 
 /* Allocate and append one node to a singly linked list. */
 int list_push_back(IntNode **head, int value) {
-    (void)head;
-    (void)value;
-    /* TODO: implement. */
-    return -1;
+    IntNode *node = malloc(sizeof *node);
+    if (!node) return -1;
+    node->value = value;
+    node->next = NULL;
+
+    IntNode **slot = head;
+    while (*slot) slot = &(*slot)->next;
+    *slot = node;
+
+    return 0;
 }
 
 /* Free all nodes without accessing them after release. */
 void list_free(IntNode *head) {
-    (void)head;
-    /* TODO: implement. */
+    while (head) {
+        IntNode *next = head->next;
+        free(head);
+        head = next;
+    }
 }
 
 #ifndef EXERCISE_TEST

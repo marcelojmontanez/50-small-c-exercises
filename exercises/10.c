@@ -3,10 +3,9 @@
 
 /* Sum count integers; all partial sums are representable as int. */
 int array_sum(const int *values, size_t count) {
-    (void)values;
-    (void)count;
-    /* TODO: implement. */
-    return 0;
+    int sum = 0;
+    while (count) { sum += *values; ++values; --count; }
+    return sum;
 }
 
 #ifndef EXERCISE_TEST

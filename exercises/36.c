@@ -4,10 +4,14 @@
 
 /* Allocate count * size zero bytes, checking multiplication first. */
 void *my_calloc(size_t count, size_t size) {
-    (void)count;
-    (void)size;
-    /* TODO: implement. */
-    return NULL;
+    if (!count || !size) return NULL;
+    if (count > SIZE_MAX / size) return NULL;
+
+    size_t byte_count = count * size;
+    void *memory = malloc(byte_count);
+    if (!memory) return NULL;
+
+    return my_memset(memory, 0, byte_count);
 }
 
 #ifndef EXERCISE_TEST

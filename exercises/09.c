@@ -3,9 +3,9 @@
 
 /* Swap the integers addressed by a and b. */
 void swap_int(int *a, int *b) {
-    (void)a;
-    (void)b;
-    /* TODO: implement. */
+    int temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
 #ifndef EXERCISE_TEST

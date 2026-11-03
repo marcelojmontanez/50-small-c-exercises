@@ -3,9 +3,8 @@
 
 /* Return the absolute value; the contract excludes INT_MIN. */
 int my_abs(int value) {
-    (void)value;
-    /* TODO: implement. */
-    return 0;
+    if (value < 0) return -value;
+    return value;
 }
 
 #ifndef EXERCISE_TEST

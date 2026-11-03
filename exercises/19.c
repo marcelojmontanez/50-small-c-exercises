@@ -3,11 +3,11 @@
 
 /* Append at most count source bytes, then a terminator. */
 char *my_strncat(char *destination, const char *source, size_t count) {
-    (void)destination;
-    (void)source;
-    (void)count;
-    /* TODO: implement. */
-    return NULL;
+    char *d = destination + my_strlen(destination);
+    while (*d) ++d;
+    while (count-- && *source) *d++ = *source++;
+    *d = '\0';
+    return destination;
 }
 
 #ifndef EXERCISE_TEST

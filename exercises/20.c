@@ -3,8 +3,14 @@
 
 /* Reverse a writable string's bytes in place, preserving its terminator. */
 void reverse_string(char *s) {
-    (void)s;
-    /* TODO: implement. */
+    if (!*s) return;
+
+    char *right = s + my_strlen(s) - 1;
+    for (char *left = s; left < right; ++left, --right) {
+        char temp = *left;
+        *left = *right;
+        *right = temp;
+    }
 }
 
 #ifndef EXERCISE_TEST
