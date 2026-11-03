@@ -1,5 +1,6 @@
 #ifndef LEARN_C_LIB_H
 #define LEARN_C_LIB_H
+#include "exercises.h"
 #include <stddef.h>
 
 /* Put declarations for your reusable helpers here. Include this file in lib.c
@@ -18,5 +19,6 @@ size_t my_strspn(const char *s, const char *accepted);
 size_t my_strcspn(const char *s, const char *rejected);
 char *my_strdup(const char *s);
 char *string_slice(const char *s, size_t start, size_t length);
+int buffer_append(ByteBuffer *buffer, const void *data, size_t count);
 
 #endif
